@@ -12,7 +12,6 @@ class LoginPage(BasePage):
         # реализуйте проверку на корректный url адрес
         assert "accounts/login/" in self.browser.current_url, "We are not on the login page"
 
-
     def should_be_login_form(self):
         login_username = self.browser.find_element(*LoginPageLocators.LOGIN_USERNAME)
         login_pass = self.browser.find_element(*LoginPageLocators.LOGIN_PASSWORD)
