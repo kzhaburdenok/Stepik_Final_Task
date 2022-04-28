@@ -7,6 +7,7 @@ class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     VIEW_BASKET_BTN = (By.XPATH, "//span[@class='btn-group']/child::a[contains(text(), 'basket')]")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 #class MainPageLocators():
 
 

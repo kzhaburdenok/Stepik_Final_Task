@@ -25,3 +25,14 @@ class LoginPage(BasePage):
         reg_confirm_pass = self.browser.find_element(*LoginPageLocators.REGISTRATION_CONFIRM_PASS)
         reg_submit_btn = self.browser.find_element(*LoginPageLocators.REGISTRATION_SUBMIT_BTN)
         assert reg_username and reg_pass and reg_confirm_pass and reg_submit_btn, "There is no Registration form"
+
+    def register_new_user(self, email, password):
+        user_email = self.browser.find_element(*LoginPageLocators.REGISTRATION_EMAIL)
+        user_email.send_keys(email)
+        user_pass = self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD)
+        user_pass.send_keys(password)
+        user_pass_confirm = self.browser.find_element(*LoginPageLocators.REGISTRATION_CONFIRM_PASS)
+        user_pass_confirm.send_keys(password)
+        confirm_button = self.browser.find_element(*LoginPageLocators.REGISTRATION_SUBMIT_BTN)
+        confirm_button.click()
+
