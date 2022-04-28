@@ -14,7 +14,6 @@ def browser(request):
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
     browser = webdriver.Chrome(options=options)
     browser.maximize_window()
-    print ("language is ", user_language)
     yield browser
     print("\nquit browser..")
     browser.quit()

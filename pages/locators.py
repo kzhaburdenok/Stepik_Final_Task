@@ -14,3 +14,10 @@ class LoginPageLocators():
     REGISTRATION_CONFIRM_PASS = (By.NAME, "registration-password2")
     REGISTRATION_SUBMIT_BTN = (By.NAME, "registration_submit")    
 
+class ProductPageLocators():
+    PPODUCT_NAME = (By.XPATH, "//div[contains(@class,'product_main')]/child::h1")
+    PRODUCT_PRICE = (By.XPATH, "//div[contains(@class,'product_main')]/child::p[@class='price_color']")
+    PRODUCT_ADD_TO_CART_BTN = (By.XPATH, "//button[contains(@class, 'btn-add-to-basket')]")
+    PRODUCT_ADDED_TO_CART_ALLERT = (By.XPATH, "//div[contains(@class,'alertinner')]/child::strong")
+    BASKET_TOTAL_PRICE = (By.XPATH, "//div[contains(@class,'alertinner')]/child::p/strong")
+
