@@ -11,7 +11,7 @@ class BasePageLocators():
 
 
 class BasketPageLocators():
-    EMPTY_BASKET_NOTIF = (By.XPATH, "//p[contains(text(), 'Your basket is empty.')]")
+    EMPTY_BASKET_NOTIF = (By.XPATH, "//div[@id='content_inner']/child::p")
     BASKET_ITEMS = (By.CLASS_NAME, "basket-items")
 
 class LoginPageLocators():
