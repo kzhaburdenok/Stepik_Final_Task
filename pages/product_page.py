@@ -5,7 +5,6 @@ from .base_page import BasePage
 
 class ProductPage(BasePage):
     def add_product_to_cart(self):
-
         add_to_cart = self.browser.find_element(*ProductPageLocators.PRODUCT_ADD_TO_CART_BTN)
         add_to_cart.click()
     
@@ -19,3 +18,8 @@ class ProductPage(BasePage):
         price_in_alert = self.browser.find_element(*ProductPageLocators.BASKET_TOTAL_PRICE).text
         assert price_in_alert == product_price, "Different price"
 
+    def should_not_be_success_msg(self):
+        assert self.is_not_element_present(*ProductPageLocators.PRODUCT_ADDED_TO_CART_ALLERT), "Success msg is displayed, but should not"
+
+    def should_disappear(self):
+        assert self.is_disappeared(*ProductPageLocators.PRODUCT_ADDED_TO_CART_ALLERT), "Success msg is still displayed, but should not"

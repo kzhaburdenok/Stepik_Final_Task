@@ -1,9 +1,18 @@
 from selenium.webdriver.common.by import By
 
-# каждый селектор — это пара: как искать и что искать
+# каждый локатор — это пара: как искать (метод) и что искать (селектор)
 
-class MainPageLocators():
+
+class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    VIEW_BASKET_BTN = (By.XPATH, "//span[@class='btn-group']/child::a[contains(text(), 'basket')]")
+#class MainPageLocators():
+
+
+class BasketPageLocators():
+    EMPTY_BASKET_NOTIF = (By.XPATH, "//p[contains(text(), 'Your basket is empty.')]")
+    BASKET_ITEMS = (By.CLASS_NAME, "basket-items")
 
 class LoginPageLocators():
     LOGIN_USERNAME = (By.NAME, "login-username")
